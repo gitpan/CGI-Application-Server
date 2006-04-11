@@ -1,6 +1,6 @@
 ---
 name: CGI-Application-Server
-version: 0.01
+version: 0.02
 author:
   - Stevan Little E<lt>stevan@iinteractive.comE<gt>
   - Rob Kinyon E<lt>rob.kinyon@iinteractive.comE<gt>
@@ -24,5 +24,5 @@ build_requires:
 provides:
   CGI::Application::Server:
     file: lib/CGI/Application/Server.pm
-    version: 0.01
+    version: 0.02
 generated_by: Module::Build version 0.2611

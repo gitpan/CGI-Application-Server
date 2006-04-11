@@ -4,15 +4,19 @@ package CGI::Application::Server;
 use strict;
 use warnings;
 
-use Carp         'confess';
-use Scalar::Util 'blessed', 'reftype';
+use Carp qw( confess );
+use CGI qw( param );
+use Scalar::Util qw( blessed reftype );
 use HTTP::Response;
 use HTTP::Status;
 use IO::Capture::Stdout;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
-use base qw(HTTP::Server::Simple::CGI HTTP::Server::Simple::Static);
+use base qw(
+    HTTP::Server::Simple::CGI
+    HTTP::Server::Simple::Static
+);
 
 # HTTP::Server::Simple methods
 
@@ -60,6 +64,8 @@ sub is_valid_entry_point {
 sub handle_request {
 	my ($self, $cgi) = @_;
 	if (my $entry_point = $self->is_valid_entry_point($ENV{REQUEST_URI})) {
+        warn "$ENV{REQUEST_URI} ($entry_point)\n";
+        warn "\t$_ => " . param( $_ ) . "\n" for param();
         my $capture = IO::Capture::Stdout->new;
         $capture->start;
 		$entry_point->new->run;		
