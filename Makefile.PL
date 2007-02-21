@@ -2,24 +2,25 @@
 use ExtUtils::MakeMaker;
 WriteMakefile
 (
+          'PL_FILES' => {},
+          'INSTALLDIRS' => 'site',
           'NAME' => 'CGI::Application::Server',
+          'EXE_FILES' => [],
           'VERSION_FROM' => 'lib/CGI/Application/Server.pm',
           'PREREQ_PM' => {
-                           'CGI::Application' => '0',
-                           'CGI::Application::Plugin::Redirect' => '0',
-                           'Carp' => '0.01',
-                           'HTTP::Request' => '0',
-                           'HTTP::Server::Simple' => '0.18',
-                           'HTTP::Server::Simple::Static' => '0.02',
-                           'HTTP::Status' => '0',
-                           'IO::Capture::Stdout' => '0',
                            'Scalar::Util' => '1.18',
+                           'IO::Capture::Stdout' => '0',
                            'Test::Exception' => '0.21',
                            'Test::HTTP::Server::Simple' => '0.02',
+                           'CGI::Application::Plugin::Redirect' => '0',
+                           'HTTP::Status' => '0',
+                           'Carp' => '0.01',
                            'Test::More' => '0.47',
-                           'Test::WWW::Mechanize' => '1.08'
-                         },
-          'INSTALLDIRS' => 'site',
-          'PL_FILES' => {}
+                           'HTTP::Server::Simple' => '0.18',
+                           'CGI::Application' => '0',
+                           'HTTP::Request' => '0',
+                           'Test::WWW::Mechanize' => '1.08',
+                           'HTTP::Server::Simple::Static' => '0.02'
+                         }
         )
 ;
