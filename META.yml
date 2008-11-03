@@ -1,6 +1,6 @@
 ---
 name: CGI-Application-Server
-version: 0.050
+version: 0.060
 author:
   - 'Stevan Little E<lt>stevan@iinteractive.comE<gt>'
   - 'Rob Kinyon E<lt>rob.kinyon@iinteractive.comE<gt>'
@@ -26,8 +26,8 @@ build_requires:
 provides:
   CGI::Application::Server:
     file: lib/CGI/Application/Server.pm
-    version: 0.050
-generated_by: Module::Build version 0.280801
+    version: 0.060
+generated_by: Module::Build version 0.3
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
   version: 1.2
