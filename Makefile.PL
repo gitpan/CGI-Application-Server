@@ -16,7 +16,7 @@ WriteMakefile
                            'Carp' => '0.01',
                            'Test::More' => '0.47',
                            'HTTP::Server::Simple' => '0.18',
-                           'CGI::Application' => '0',
+                           'CGI::Application' => '4.21',
                            'HTTP::Request' => '0',
                            'Test::WWW::Mechanize' => '1.08',
                            'HTTP::Server::Simple::Static' => '0.02'

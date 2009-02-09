@@ -10,7 +10,7 @@ use Scalar::Util qw( blessed reftype );
 use HTTP::Response;
 use HTTP::Status;
 
-our $VERSION = '0.060';
+our $VERSION = '0.061';
 
 use base qw( HTTP::Server::Simple::CGI );
 use HTTP::Server::Simple::Static;
@@ -77,8 +77,8 @@ sub is_valid_entry_point {
 sub handle_request {
     my ($self, $cgi) = @_;
     if (my ($path, $target) = $self->is_valid_entry_point($ENV{REQUEST_URI})) {
-        warn "$ENV{REQUEST_URI} ($target)\n";
-        warn "\t$_ => " . param( $_ ) . "\n" for param();
+        # warn "$ENV{REQUEST_URI} ($target)\n";
+        # warn "\t$_ => " . param( $_ ) . "\n" for param();
 
         local $ENV{CGI_APP_RETURN_ONLY} = 1;
         (local $ENV{PATH_INFO} = $ENV{PATH_INFO}) =~ s/\A\Q$path//;
@@ -92,6 +92,7 @@ sub handle_request {
           if (!defined blessed $target) {
 	    return $self->_serve_response($target->new->run);
           } else {
+        $target->query($cgi);
 	    return $self->_serve_response($target->run);
           }
 	}

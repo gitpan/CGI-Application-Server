@@ -1,6 +1,6 @@
 ---
 name: CGI-Application-Server
-version: 0.060
+version: 0.061
 author:
   - 'Stevan Little E<lt>stevan@iinteractive.comE<gt>'
   - 'Rob Kinyon E<lt>rob.kinyon@iinteractive.comE<gt>'
@@ -10,7 +10,7 @@ license: perl
 resources:
   license: http://dev.perl.org/licenses/
 requires:
-  CGI::Application: 0
+  CGI::Application: 4.21
   Carp: 0.01
   HTTP::Request: 0
   HTTP::Server::Simple: 0.18
@@ -26,7 +26,7 @@ build_requires:
 provides:
   CGI::Application::Server:
     file: lib/CGI/Application/Server.pm
-    version: 0.060
+    version: 0.061
 generated_by: Module::Build version 0.3
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
