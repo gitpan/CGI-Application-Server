@@ -1,14 +1,27 @@
 ---
-name: CGI-Application-Server
-version: 0.061
+abstract: 'A simple HTTP server for developing with CGI::Application'
 author:
   - 'Stevan Little E<lt>stevan@iinteractive.comE<gt>'
   - 'Rob Kinyon E<lt>rob.kinyon@iinteractive.comE<gt>'
   - 'Ricardo SIGNES E<lt>rjbs@cpan.orgE<gt>'
-abstract: A simple HTTP server for developing with CGI::Application
+build_requires:
+  CGI::Application::Plugin::Redirect: 0
+  Test::Exception: 0.21
+  Test::HTTP::Server::Simple: 0.02
+  Test::More: 0.47
+  Test::WWW::Mechanize: 1.08
+configure_requires:
+  Module::Build: 0.36
+generated_by: 'Module::Build version 0.3601'
 license: perl
-resources:
-  license: http://dev.perl.org/licenses/
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: CGI-Application-Server
+provides:
+  CGI::Application::Server:
+    file: lib/CGI/Application/Server.pm
+    version: 0.062
 requires:
   CGI::Application: 4.21
   Carp: 0.01
@@ -17,17 +30,6 @@ requires:
   HTTP::Server::Simple::Static: 0.02
   HTTP::Status: 0
   Scalar::Util: 1.18
-build_requires:
-  CGI::Application::Plugin::Redirect: 0
-  Test::Exception: 0.21
-  Test::HTTP::Server::Simple: 0.02
-  Test::More: 0.47
-  Test::WWW::Mechanize: 1.08
-provides:
-  CGI::Application::Server:
-    file: lib/CGI/Application/Server.pm
-    version: 0.061
-generated_by: Module::Build version 0.3
-meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.062
