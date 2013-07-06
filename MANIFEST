@@ -1,8 +1,14 @@
-Build.PL
-ChangeLog
-lib/CGI/Application/Server.pm
+Changes
+LICENSE
 MANIFEST
+META.json
+META.yml
+Makefile.PL
 README
+dist.ini
+lib/CGI/Application/Server.pm
+t/00-compile.t
+t/000-report-versions-tiny.t
 t/000_load.t
 t/001_basic.t
 t/002_valid_entry_points.t
@@ -21,6 +27,5 @@ t/lib/AppWithParams.pm
 t/lib/MyCGIApp.pm
 t/lib/MyCGIApp/Dispatch.pm
 t/lib/ReplaceQueryObject.pm
-t/pod.t
-t/pod_coverage.t
-META.yml
+xt/release/changes_has_content.t
+xt/release/pod-syntax.t
